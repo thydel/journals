@@ -21,6 +21,8 @@ srcs = $($(src))
 dest := indexed/$(src)
 . != mkdir -p $(tmp) $(dest)
 
+toplevel    := https://github.com/thydel/journals-indexed
+
 journal     := journal-$(src)
 journal_jq  := journal-v2.jq
 journal_j2  := journal-v2.j2

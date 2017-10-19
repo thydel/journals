@@ -9,6 +9,7 @@
     tmp: '{{ TMP | default("tmp") }}'
     src: '{{ SRC | default("all") }}'
     template: '{{ TEMPLATE | default("journal.j2") }}'
+    toplevel: '{{ TOPLEVEL | default("/") }}'
 
   tasks:
     - include_vars: '{{ tmp }}/journal-{{ src }}.json'

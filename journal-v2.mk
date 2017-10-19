@@ -61,7 +61,9 @@ cp-markdown += echo -e '\n' >> $@;
 cp-markdown += cat $< >> $@
 $(filter %.md, $(files)): $(dest)/%.md : %.md %.yml $(dir-tree); $(cp-markdown)
 
-$(tmp)/$(journal).md  = $< -e TMP=$(tmp) -e SRC=$(src) -e TEMPLATE=$(journal_j2) -D &&
+toplevel ?= https://github.com/Epiconcept-Paris/infra-journals-indexed
+
+$(tmp)/$(journal).md  = $< -e TMP=$(tmp) -e SRC=$(src) -e TOPLEVEL=$(toplevel) -e TEMPLATE=$(journal_j2) -D &&
 $(tmp)/$(journal).md += touch $@ -r $$(ls -t $^ | head -1)
 $(tmp)/$(journal).md: $(journal_yml) $(journal_j2) $(tmp)/$(journal).json; $($@)
 
