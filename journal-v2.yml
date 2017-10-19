@@ -1,0 +1,15 @@
+#!/usr/bin/env ansible-playbook
+---
+
+- hosts: localhost
+  gather_facts: True
+  # strategy: debug
+  
+  vars:
+    tmp: '{{ TMP | default("tmp") }}'
+    src: '{{ SRC | default("all") }}'
+    template: '{{ TEMPLATE | default("journal.j2") }}'
+
+  tasks:
+    - include_vars: '{{ tmp }}/journal-{{ src }}.json'
+    - template: { src: '{{ template }}', dest: '{{ tmp }}/journal-{{ src }}.md' }

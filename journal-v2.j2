@@ -1,0 +1,118 @@
+#jinja2: line_statement_prefix: "%", line_comment_prefix: "#."
+
+% set nl = '\n'
+% set items = journal.all_items
+
+#.- print a title
+#.-
+%- macro p_title(id)
+{{ items[id].title | default(id) }}
+%- endmacro
+
+#.- print markdowns item
+#.-
+%- macro p_markdowns(id)
+  % if items[id].markdowns | length == 1
+- [{{ p_title(id) }}]({{ items[id].base + items[id].markdowns[0] }}) {{ items[id].dates | last }}
+  % else
+- {{ p_title(id) }} {{ items[id].dates | last }}
+    % for file in items[id].markdowns
+  - [{{ file }}]({{ items[id].base + file }})
+    % endfor
+  % endif
+% endmacro
+
+#.- print rests item
+#.-
+%- macro p_rests(id)
+  % if items[id].rests | length == 1
+- [{{ p_title(id) }}]({{ items[id].base + items[id].rests[0] }}) {{ items[id].dates | last }}
+  % else
+- {{ p_title(id) }} {{ items[id].dates | last }}
+    % for file in items[id].rests
+  - [{{ file }}]({{ items[id].base + file }})
+    % endfor
+  % endif
+% endmacro
+
+#.- print markdowns or rests item
+#.-
+%- macro p_items(id)
+  % if items[id].markdowns is defined
+{{ p_markdowns(id) }}
+  % elif items[id].rests is defined
+{{ p_rests(id) }}
+  % else
+- ITEM "{{ id }}" NEITHER MD NOR RST
+  % endif
+% endmacro
+
+#.- print group item
+#.-
+%- macro p_group(id)
+## [Group](#all-groups) {{ id }}
+### {{ p_title(id) }}
+  % for fid in items[id].group
+{{ p_items(fid) }}
+  %- endfor
+% endmacro
+
+#.- Fix keys sort order
+#.-
+%- set order = {}
+% for key in journal.all_keys
+  % do order.update({ key: False })
+% endfor
+% do order.update({ 'dates' : True })
+
+#.- print a list of markdowns item
+#.-
+%- macro p_by(key)
+{{ nl }}# [By](#short-table-of-contents) {{ key }}
+  % for item in journal['by_' ~ key].keys() | sort(reverse = order[key])
+- [{{ item }}](#{{ key ~ '-' ~ item | lower }})
+  % endfor
+  % for item, list in journal['by_' ~ key] | dictsort
+## [{{ key }}](#by-{{ key }}) {{ item }}
+    % for id in list
+{{ p_items(id) }}
+    %- endfor
+  % endfor
+% endmacro
+
+- [Top level (github)](https://github.com/Epiconcept-Paris/infra-journals-indexed)
+- [Top level (local)](/) with grip [grip](https://github.com/joeyespo/grip)
+
+# Short Table of Contents
+- [All groups](#all-groups)
+- [All items](#all-items)
+% for key in journal.all_keys
+- [By {{ key }}](#by-{{ key }})
+% endfor
+- [Full Table of Contents](#table-of-contents)
+
+% if journal.has_group
+# [All](#short-table-of-contents) groups
+
+%   for id in journal.has_group
+{{ p_group(id) }}
+%-  endfor
+% endif
+
+{{nl}}# [All](#short-table-of-contents) items
+
+% for id in journal.has_markdowns
+{{ p_markdowns(id) }}
+%- endfor
+
+% for id in journal.has_rests
+{{ p_rests(id) }}
+%- endfor
+
+% for key in journal.all_keys
+{{ p_by(key) }}
+%- endfor
+
+#.- Local Variables:
+#.- Mode: jinja2
+#.- End:
