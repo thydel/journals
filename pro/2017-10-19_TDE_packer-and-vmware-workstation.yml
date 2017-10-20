@@ -7,4 +7,4 @@
   repos: [ "https://github.com/thydel/misc-play" ]
   tickets: []
   tags: [ packer, vagrant, vmware-workstation, virtualbox, aws, digitalocean]
-  title: "Uses packer and vmware workstation"
+  title: "Install and try packer and vmware workstation"

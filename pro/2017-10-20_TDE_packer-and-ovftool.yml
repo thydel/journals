@@ -1,0 +1,10 @@
+- id: 2017-10-20_TDE_packer-and-ovftool
+  actors: [ TDE ]
+  dates: [ 2017-10-20 ]
+  markdowns: [ 2017-10-20_TDE_packer-and-ovftool.md ]
+  files: []
+  nodes: []
+  repos: []
+  tickets: []
+  tags: [ packer, vmware-workstation, ovftool, vsphere ]
+  title: "packer and ovftool"
