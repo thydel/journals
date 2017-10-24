@@ -1,0 +1,12 @@
+- id: 2017-10-24_TDE_hg2github
+  actors: [ TDE ]
+  dates: [ 2017-10-24 ]
+  markdowns: [ 2017-10-24_TDE_hg2github.md ]
+  files: []
+  nodes: []
+  repos:
+    - 'https://github.com/thydel/helpers'
+    - 'https://github.com/thydel/ar-sudoersd'
+  tickets: []
+  tags: [ hg2github, ansible, role, repos, sudo ]
+  title: "Uses hg2github to migrate sudoersd roles"

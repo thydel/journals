@@ -1,0 +1,12 @@
+- id: 2017-10-24_TDE_legacy-infra
+  actors: [ TDE ]
+  dates: [ 2017-10-24 ]
+  markdowns: [ 2017-10-24_TDE_legacy-infra.md ]
+  files: []
+  nodes: []
+  repos:
+    - 'https://github.com/thydel/helpers'
+    - 'https://github.com/thydel/legacy-infra'
+  tickets: []
+  tags: [ legacy, ansible, role, repos, infra, reboot]
+  title: "New legacy infra repos"
