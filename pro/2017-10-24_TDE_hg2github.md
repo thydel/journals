@@ -48,7 +48,7 @@ cd ~/usr/thydel.d/helpers/
 helper ansible
 hg2git.yml -D -e hg=~/usr/epi2/roles/$or -e git=~/usr/thydel.d/$r
 hg --cwd ~/usr/epi2/roles/$or push git
-cd ~/usr/thydel.d/$or
+cd ~/usr/thydel.d/$r
 git pull
 echo *~ >> .gitignore
 git rm .hgignore
