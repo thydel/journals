@@ -1,16 +1,16 @@
 On my `debian9` workstation trying to get an ssh-agent *as usual*, I fight with:
 
-	- `gnome-keyring-dameon`
-	  - process `/usr/bin/gnome-keyring-daemon --start --foreground --components=secrets`
-	  - env `SSH_AUTH_SOCK=/run/user/1000/keyring/control`
+- `gnome-keyring-dameon`
+  - process `/usr/bin/gnome-keyring-daemon --start --foreground --components=secrets`
+  - env `SSH_AUTH_SOCK=/run/user/1000/keyring/control`
 
-	- `gpg-agent`
-	  - process `/usr/bin/gpg-agent --supervised`
-	  - env `GPG_AGENT_INFO=/run/user/1000/S.gpg-agent.ssh`
+- `gpg-agent`
+  - process `/usr/bin/gpg-agent --supervised`
+  - env `GPG_AGENT_INFO=/run/user/1000/S.gpg-agent.ssh`
 
-	- `mate-session`
-	  - process `/usr/bin/ssh-agent mate-session`
-	  - env `GPG_AGENT_INFO=/run/user/1000/S.gpg-agent.ssh`
+- `mate-session`
+  - process `/usr/bin/ssh-agent mate-session`
+  - env `GPG_AGENT_INFO=/run/user/1000/S.gpg-agent.ssh`
 
 
 Admittedly, I upgraded from wheezy to stretch via jessie, and I
