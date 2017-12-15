@@ -1,0 +1,6 @@
+- id: 2017-12-15_TDE_inotifywait
+  actors: [ TDE ]
+  dates: [ 2017-12-15 ]
+  markdowns: [ 2017-12-15_TDE_inotifywait.md ]
+  tags: [ inotify ]
+  title: "Discover simple use of inotifywait"

@@ -3,8 +3,6 @@
   dates: [ 2017-10-19 ]
   markdowns: [ 2017-10-19_TDE_packer-and-vmware-workstation.md ]
   files: [ 2017-10-19_TDE_packer-and-vmware-workstation/example.json ]
-  nodes: []
   repos: [ "https://github.com/thydel/misc-play" ]
-  tickets: []
   tags: [ packer, vagrant, vmware-workstation, virtualbox, aws, digitalocean]
   title: "Install and try packer and vmware workstation"
