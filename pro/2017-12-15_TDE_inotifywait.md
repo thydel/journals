@@ -1,3 +1,5 @@
+# Tries inotify
+
 We know that `inotify` exists, but how exactly can we use it to
 trigger a simple script when we drop a file in a directory ?
 

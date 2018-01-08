@@ -2,5 +2,6 @@
   actors: [ TDE ]
   dates: [ 2017-11-22 ]
   markdowns: [ 2017-11-22_TDE_ssh-agent.md ]
+  nodes: [ tde-ws ]
   tags: [ ssh, ssh-agent, gnupg, gpg-agent, gnome-keyring-dameon ]
   title: "Reverts to plain old ssh-agent"
