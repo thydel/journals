@@ -1,0 +1,7 @@
+- id: 2018-01-08_TDE_print-broken
+  actors: [ TDE ]
+  dates: [ 2018-01-08 ]
+  markdowns: [ 2018-01-08_TDE_print-broken.md ]
+  nodes: [ tde-ws ]
+  tags: [ printer ]
+  title: "Fixes printer problem"
