@@ -13,7 +13,7 @@
 #.-
 %- macro p_markdowns(id)
   % if items[id].markdowns | length == 1
-- [{{ p_title(id) }}]({{ items[id].base + items[id].markdowns[0] }}) {{ items[id].dates | last }}
+- [{{ p_title(id) }}]({{ items[id].base + items[id].markdowns[0] }}) {{ items[id].dates | join(", ") }}
   % else
 - {{ p_title(id) }} {{ items[id].dates | last }}
     % for file in items[id].markdowns
@@ -70,10 +70,22 @@
 %- macro p_by(key)
 {{ nl }}# [By](#short-table-of-contents) {{ key }}
   % for item in journal['by_' ~ key].keys() | sort(reverse = order[key])
+    % if key == 'repos' or key == 'tickets'
+- [{{ item | regex_replace('https?://','') }}](#{{ key ~ '-' ~ item | regex_replace('^https?://','') | regex_replace('[^a-zA-Z0-9_ -]','') | lower }})
+    % else
+      % if key == 'tags' or key == 'nodes'
+[{{ item }}](#{{ key ~ '-' ~ item | lower }})
+      % else
 - [{{ item }}](#{{ key ~ '-' ~ item | lower }})
+      % endif
+    % endif
   % endfor
   % for item, list in journal['by_' ~ key] | dictsort
+    % if key == 'repos' or key == 'tickets'
+## [{{ key }}](#by-{{ key }}) {{ item | regex_replace('https?://','') }}
+    % else
 ## [{{ key }}](#by-{{ key }}) {{ item }}
+    % endif
     % for id in list
 {{ p_items(id) }}
     %- endfor
