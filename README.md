@@ -9,3 +9,8 @@ the team.
 
 This is the place where I intend to keep the subset of journal parts I
 wrote that don't need to need to stay in a private repos.
+
+# What you need to install
+
+- Last version of jq
+- pandoc
