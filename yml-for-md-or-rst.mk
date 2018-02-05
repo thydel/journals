@@ -24,7 +24,8 @@ thy    := TDE
 evens  := ESC
 cedric := CGD
 
-date  != date +%F
+days  ?= 0
+date  != date +%F -d '$(days) days ago'
 label := $(MAKECMDGOALS)
 title := $(subst -, ,$(label))
 actor := $($(USER))
