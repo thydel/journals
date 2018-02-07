@@ -14,7 +14,7 @@ SHELL := $(shell which bash)
 .DELETE_ON_ERROR:
 
 src := tde
-tde := pro
+tde := pro thy
 
 tmp ?= tmp/$(src)
 srcs = $($(src))

@@ -1,0 +1,7 @@
+- id: 2018-02-07_TDE_corrects-dates
+  actors: [ TDE ]
+  dates: [ 2018-02-07 ]
+  markdowns: [ 2018-02-07_TDE_corrects-dates.md ]
+  nodes: [ tde-ws ]
+  tags: [ photos, date, jpeg, jhead, awk ]
+  title: "Apply file timestamp shift"
