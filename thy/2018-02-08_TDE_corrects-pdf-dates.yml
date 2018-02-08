@@ -1,0 +1,7 @@
+- id: 2018-02-08_TDE_corrects-pdf-dates
+  actors: [ TDE ]
+  dates: [ 2018-02-08 ]
+  markdowns: [ 2018-02-08_TDE_corrects-pdf-dates.md ]
+  nodes: [ tde-ws ]
+  tags: [ pdf, date, exiftool, awk ]
+  title: "Set PDF file timestamp from metadata"
