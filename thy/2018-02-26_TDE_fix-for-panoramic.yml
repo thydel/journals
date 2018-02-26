@@ -1,0 +1,7 @@
+- id: 2018-02-26_TDE_fix-for-panoramic
+  actors: [ TDE ]
+  dates: [ 2018-02-26 ]
+  markdowns: [ 2018-02-26_TDE_fix-for-panoramic.md ]
+  nodes: [ tde-ws ]
+  tags: [ jpeg, panorama ]
+  title: Fix jpeg for samsung panorama
