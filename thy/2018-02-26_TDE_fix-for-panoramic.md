@@ -23,8 +23,15 @@ chmod +x /usr/local/bin/fix_eoi.py
 ```
 ls *.jpg | xargs -i fix_eoi.py {}
 ls *_pano.jpg | cut -d_ -f1 | xargs -i echo 'touch -r "{}.jpg" "{}_pano.jpg"' | dash
-mkdir -p 2.rm
+mkdir -p .2rm
 ls *_pano.jpg | cut -d_ -f1 | xargs -i echo 'mv "{}.jpg" .2rm' | dash
 jhead -n%Y-%m-%d_%H-%M-%S -ft *.jpg
 jpegoptim -p -m90 -v *.jpg
+```
+
+# Somes usefull packages
+
+```
+echo jhead jpegoptim jpegtran exiftool | fmt -w1 | xargs -i apt-file search {}
+sudo aptitude install jhead jpegoptim jpegtran libjpeg-turbo-progs libimage-exiftool-perl
 ```
