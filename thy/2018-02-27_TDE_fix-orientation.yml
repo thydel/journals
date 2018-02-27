@@ -1,0 +1,7 @@
+- id: 2018-02-27_TDE_fix-orientation
+  actors: [ TDE ]
+  dates: [ 2018-02-27 ]
+  markdowns: [ 2018-02-27_TDE_fix-orientation.md ]
+  nodes: [ tde-ws ]
+  tags: [ jpeg, orientation, photo ]
+  title: "Manually fix orientation"

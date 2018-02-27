@@ -33,5 +33,5 @@ jpegoptim -p -m90 -v *.jpg
 
 ```
 echo jhead jpegoptim jpegtran exiftool | fmt -w1 | xargs -i apt-file search {}
-sudo aptitude install jhead jpegoptim jpegtran libjpeg-turbo-progs libimage-exiftool-perl
+sudo aptitude install jhead jpegoptim libjpeg-turbo-progs libimage-exiftool-perl
 ```
