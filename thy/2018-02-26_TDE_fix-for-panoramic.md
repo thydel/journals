@@ -21,7 +21,7 @@ chmod +x /usr/local/bin/fix_eoi.py
 # New template to store incoming pictures
 
 ```
-ls *.jpg | xargs -i fix_eoi.py {}
+ls *.jpg | xargs -i echo fix_eoi.py \"{}\" | dash
 ls *_pano.jpg | cut -d_ -f1 | xargs -i echo 'touch -r "{}.jpg" "{}_pano.jpg"' | dash
 mkdir -p .2rm
 ls *_pano.jpg | cut -d_ -f1 | xargs -i echo 'mv "{}.jpg" .2rm' | dash
