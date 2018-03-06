@@ -1,0 +1,7 @@
+- id: 2018-03-06_TDE_fix-ubuntu-eeepc
+  actors: [ TDE ]
+  dates: [ 2018-03-06 ]
+  markdowns: [ 2018-03-06_TDE_fix-ubuntu-eeepc.md ]
+  nodes: [ eeepc-1000h ]
+  tags: [ eeepc, ubuntu, graphic, problem ]
+  title: "fix ubuntu eeepc"
