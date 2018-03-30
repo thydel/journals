@@ -1,0 +1,7 @@
+- id: 2018-03-29_TDE_curl-imap
+  actors: [ TDE ]
+  dates: [ 2018-03-29 ]
+  markdowns: [ 2018-03-29_TDE_curl-imap.md ]
+  nodes: [ tde-ws ]
+  tags: [ curl, imap ]
+  title: Extracts file list from an email set using curl
