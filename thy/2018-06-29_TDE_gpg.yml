@@ -1,0 +1,6 @@
+- id: 2018-06-29_TDE_gpg
+  actors: [ TDE ]
+  dates: [ 2018-06-29 ]
+  markdowns: [ 2018-06-29_TDE_gpg.md ]
+  tags: [ GPG, pass ]
+  title: GPG trap
