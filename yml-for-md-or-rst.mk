@@ -32,7 +32,14 @@ actor := $($(USER))
 id    := $(date)_$(actor)_$(label)
 files := $(id).$(suf) $(id).yml
 
-$(suf) = echo '\# $(id)' >  $@
+define echo
+# $(id)
+
+[Local Variables:]::
+[indent-tabs-mode: nil]::
+[End:]::
+endef
+$(suf) = echo '$(echo)' >  $@
 
 define yml
 echo '- id: $(id)' > $@
