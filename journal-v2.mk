@@ -50,6 +50,7 @@ cp-default = cp $< $@
 $(filter-out %.md, $(files)): $(dest)/% : % $(dir-tree); $(cp-default)
 
 pandoc-toc := pandoc --template=toc-template.txt --toc -t markdown_github
+pandoc-toc := pandoc --template=toc-template.txt --toc -t gfm
 gh-md-toc  := tmp/gh-md-toc
 mk-toc     := $(pandoc-toc)
 
