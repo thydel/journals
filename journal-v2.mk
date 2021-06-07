@@ -16,7 +16,7 @@ $(warning $(metadatas.tree))
 endif
 
 yaml2json.py := import sys, yaml, json;
-yaml2json.py += json.dump(yaml.load(sys.stdin), sys.stdout, indent=4, default=str, sort_keys=True)
+yaml2json.py += json.dump(yaml.load(sys.stdin, Loader=yaml.FullLoader), sys.stdout, indent=4, default=str, sort_keys=True)
 yaml2json    := python -c '$(yaml2json.py)'
 
 metadata = < $< $(yaml2json) | jq '.[] += { base: "$(dir $<)" }' > $@
